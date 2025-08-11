@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация на сайте</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745; /* зеленый цвет */
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838; /* темнее при наведении */
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Регистрация</h2>
+        <form action="/register" method="POST">
+            <label for="username">Имя пользователя</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="email">Электронная почта</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" required />
+
+            <label for="confirm_password">Подтверждение пароля</label>
+           <input type="password" id="confirm_password" name="confirm_password" required />
+
+           <button type="submit">Зарегистрироваться</button>
+       </form>
+       <div class="login-link">
+           Уже есть аккаунт? <a href="C:\Users\Public\Documents\AdobeGCInfo\Сайт\vibecart\Проект\login.html">Войти</a>
+       </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<link rel="icon" href="static\фото\logo1.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VibeCart</title>
+    
+    <style>
+/* Стиль для черно-оранжевой кнопки с отступом */
+/* Стиль для черно-оранжевой кнопки с отступом и черным текстом */
+.button-orange-black {
+  background-color: #ff7f00; /* ярко-оранжевый фон */
+  color: #000000;            /* черный текст */
+  padding: 10px 5px;        /* внутренние отступы */
+  font-size: 16px;           /* размер шрифта */
+  border: none;              /* без рамки */
+  border-radius: 8px;        /* скругление углов */
+  cursor: pointer;           /* курсор при наведении */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* тень для объема */
+  transition: all 0.3s ease; /* плавное изменение при наведении */
+  transform: translateX(10px);
+  margin: 5px; /* отступ в 5 пикселей вокруг кнопки */
+}
+
+/* Эффект при наведении */
+.button-orange-black:hover {
+  background-color: #e06b00; /* чуть темнее оранжевый при наведении */
+  transform: translateY(-2px); /* легкое поднятие кнопки */
+}
+        #navbar {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            opacity: 1;
+            }
+        .fixed {
+            position: fixed;
+            top: 0;
+            margin-left: 200px;
+            z-index: 1000;
+            box-shadow: 0 20px 50px rgba(0,0,0,1);
+            background-color: #000000;
+            }
+        /* Общие стили */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #333;
+        }
+		
+		.logo {
+			padding-right: 600px;
+		}
+
+		
+		.title {
+			padding-left: 600px;
+		}
+		
+        /* Шапка сайта */
+        header {
+            background-color: #d76e00;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Навигационное меню */
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #4c270d;
+            text-decoration: none;
+            margin: 0 17px;
+            font-weight: bold;
+            transition: color 0.3s;
+			font-size: 19px;
+        }
+
+        nav a:hover {
+            color: #000000;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 1000px;
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+
+        footer {
+            background-color: #d76e00;
+            color: #000000;
+            text-align: center;
+            padding: 15px 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav a {
+                position: fixed;
+                display: block;
+                margin: 10px 0;
+            }
+            
+            main {
+                padding: 10px;
+            }
+        }
+.chat-widget-container {
+    position: absolute;
+    bottom: 450px;
+    right: 1460px;
+    height: auto; 
+    z-index: 9999; /* чтобы было поверх других элементов */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    background-color: transparent /* или цвет фона, если нужен */
+}
+/* Стиль для вставляемых картинок в стиле DNS */
+        .dns-image-container {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 15px; 
+			margin-top:20px; 
+			justify-content:center; 
+        }
+
+        .dns-image-container img {
+			/* max-width:auto; чтобы сохранять пропорции */
+            margin-bottom: 15px;
+            margin-left: 20px;
+			height:400; 
+			width:400; 
+			max-height:none; 
+			border-radius:4px; /* чуть скруглить углы для стиля DNS */
+			box-shadow:none; /* убрать тень, если нужно более минималистично */
+			border:none; /* убрать рамку по умолчанию или задать свою при необходимости */
+			/* display:block; чтобы не было лишних пробелов снизу у изображений */
+		}
+        .carts {
+            font-size: 30px;
+            color: #d76e00;
+            font-family: 'Times new Roman';
+        }
+        /* Общие стили для контейнера изображений */
+.dns-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* Стиль для каждого блока с изображением и кнопкой */
+.image-item img {
+    display: block;
+    border-radius: 8px; /* немного скруглим углы для красоты */
+  }
+
+.description {
+    width: 100%; /* занимает всю ширину блока */
+    text-align: center;
+    margin-bottom: 10px; /* отступ снизу */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+/* Стиль для кнопки */
+.buy-button {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 8px 24px;
+    background-color: #4CAF50; /* зеленый цвет */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buy-button:hover {
+    background-color: #45a049; /* чуть темнее при наведении */
+}
+/* Добавляем стили для виджета обратной связи */
+        .feedback-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            background-color: #ff7f00;
+            color: #000;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            max-width: 300px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .feedback-widget:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feedback-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        .feedback-form button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .feedback-form button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-widget">
+        <h3 style="margin-top: 0;">Обратная связь</h3>
+        <form class="feedback-form" id="feedback-form">
+            <textarea id="feedback-message" placeholder="Ваше сообщение..."></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    
+    <script>
+        // Добавляем JavaScript для обработки формы обратной связи
+        document.getElementById('feedback-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = document.getElementById('feedback-message').value;
+            
+            fetch('/send_feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Сообщение отправлено! Администратор ответит вам в ближайшее время.');
+                    document.getElementById('feedback-message').value = '';
+                } else {
+                    alert('Ошибка отправки сообщения.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Произошла ошибка при отправке сообщения.');
+            });
+        });
+    </script>
+    <header>
+        <table width="100%">
+            <tr>
+                <td width="99%"><center><h1 class = 'title'><p style="color:black;">VibeCart</p></h1></center></td>
+                <td><img class='logo'  img src="logo_wibecard_notext.ico" width="80" height="80" alt="альтернативный текст" >
+            </tr>
+        </table>
+        <nav id="navigation">
+            <a href="#about">О проекте</a>
+            <a href="#searcher">Поисковик</a>
+            <a href="#technologies">Технологии</a>
+            <a href="https://drive.yadro.com/s/65jAKm8PcKLxkid" target="_blank">Документация</a>
+            <a href="#contact">Контакты</a>
+            <a href="https://github.com/Vladislav12323x/VibeCart" target="_blank">GitHub проекта</a>
+            <a href="" target="_blank">Telegram бот</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Чатбот -->
+    <!-- Внутри секции #searcher -->
+<section id="searcher">
+            <!-- <div class="chat-container">
+                <script src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.7/dist/build/static/js/bundle.min.js"></script>
+                <langflow-chat
+                    window_title="VibeBot v 3.0"
+                    flow_id="425977f5-e3e7-42db-82f4-d8bb3ec2170d"
+                    host_url="http://localhost:7860">
+                </langflow-chat> -->
+<p>Задайте вопрос:</p>
+<script
+  src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.7/dist/build/static/js/bundle.min.js">
+</script>
+  <langflow-chat
+    window_title="VibeBot v 5.0"
+    flow_id="fd1c05ac-09e2-4dac-bbf9-c9d4721b1824"
+    host_url="http://localhost:7860">
+</langflow-chat>
+            </div>
+        </section>
+<div class = "carts">
+<h3>Все доступные для покупки видеокарты:</h3>
+</div>
+<div class="dns-image-container">
+    <div class="image-item">
+        <a href="/rtx5090", class="button-orange-black">Информация RTX 5090</a>
+        <img src="{{ url_for("static", filename="фото/RTX 5090.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx5080", class="button-orange-black">Информация RTX 5080</a>
+        <img src="{{ url_for("static", filename="фото/RTX 5080.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx5070", class="button-orange-black">Информация RTX 5070</a>
+        <img src="{{ url_for("static", filename="фото/RTX 5070.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx4090", class="button-orange-black">Информация RTX 4090</a>
+        <img src="{{ url_for("static", filename="фото/4090.jpg") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx4080", class="button-orange-black">Информация RTX 4080</a>
+        <img src="{{ url_for("static", filename="фото/RTX 4080.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx4070", class="button-orange-black">Информация RTX 4070</a>
+        <img src="{{ url_for("static", filename="фото/RTX 4070.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx4060", class="button-orange-black">Информация RTX 4060</a>
+        <img src="{{ url_for("static", filename="фото/RTX 4060.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx3090", class="button-orange-black">Информация RTX 3090</a>
+        <img src="{{ url_for("static", filename="фото/RTX 3090.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx3080", class="button-orange-black">Информация RTX 3080</a>
+        <img src="{{ url_for("static", filename="фото/RTX 3080.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx3070", class="button-orange-black">Информация RTX 3070</a>
+        <img src="{{ url_for("static", filename="фото/RTX 3070.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx3060", class="button-orange-black">Информация RTX 3060</a>
+        <img src="{{ url_for("static", filename="фото/RTX 3060.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/rtx3050", class="button-orange-black">Информация RTX 3050</a>
+        <img src="{{ url_for("static", filename="фото/RTX 3050.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+</div>
+<div class = "carts">
+<h3>Все доступные для покупки процессоры:</h3>
+</div>
+<div class = "dns-image-container">
+    <div class="image-item">
+        <a href="/i512400", class="button-orange-black">Информация о i5 12400</a>
+        <img src="{{ url_for("static", filename="фото/i5 12400.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/i513400", class="button-orange-black">Информация о i5 13400</a>
+        <img src="{{ url_for("static", filename="фото/i5 13400.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="/i514600", class="button-orange-black">Информация о i5 14600</a>
+        <img src="{{ url_for("static", filename="фото/i5 14600.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="", class="button-orange-black">Информация о i7 12700</a>
+        <img src="{{ url_for("static", filename="фото/i7 12700.jfif") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="", class="button-orange-black">Информация о i7 13700</a>
+        <img src="{{ url_for("static", filename="фото/i7 13700.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="", class="button-orange-black">Информация о i7 14700</a>
+        <img src="{{ url_for("static", filename="фото/i7 14700.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="", class="button-orange-black">Информация о i9 12900</a>
+        <img src="{{ url_for("static", filename="фото/i9 12900.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="", class="button-orange-black">Информация о i9 13900</a>
+        <img src="{{ url_for("static", filename="фото/i9 13900.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="", class="button-orange-black">Информация о i9 14900</a>
+        <img src="{{ url_for("static", filename="фото/i9 14900.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+<div class = "carts">
+<h3>Вся доступная для покупки оперативная память:</h3>
+</div>
+<div class = "dns-image-container">
+    <div class="image-item">
+        <a href="kingstonfury16", class="button-orange-black">Информация о kingston fury 16gb</a>
+        <img src="{{ url_for("static", filename="фото/kingston fury 16.jfif") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="kingstonfury32", class="button-orange-black">Информация о kingston fury 32gb</a>
+        <img src="{{ url_for("static", filename="фото/kingston fury 32.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="kingstonfury64", class="button-orange-black">Информация о kingston fury 64gb</a>
+        <img src="{{ url_for("static", filename="фото/kingston fury 64.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="kingstonfury96", class="button-orange-black">Информация о kingston fury 96gb</a>
+        <img src="{{ url_for("static", filename="фото/kingston fury 96.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+    <div class="image-item">
+        <a href="kingstonfury128", class="button-orange-black">Информация о kingston fury 128gb</a>
+        <img src="{{ url_for("static", filename="фото/kingston fury 128.webp") }}" alt="Видеокарта RTX 4080", width="400", height="300">
+        <button class="buy-button">Купить</button>
+    </div>
+   </div> 
+ 
+
+        <!-- О проекте -->   
+        <section id="about">
+            <h2>О проекте</h2>
+            <p>Проект <b>Vibecart</b> — это интернет магазин, использующий возможности нейросетей на базе <b>MistralAI</b> для удобной и эффективной работы с технической поддержкой <b>Tatlin.Unified Gen2</b> — системы хранения данных (СХД) от компании <b>YADRO</b>.</p>
+            <p><b>Основные возможности:</b></p>
+            <ul>
+                <li><b>LLM and AI agent</b> - собственноручно обученная лингвистическая модель отвечающая подавляющее большенство частозадаваемых вопросов от пользователя и не только. </li>
+                <li><b>Быстрый поиск информации</b> - нейросеть анализирует документацию и предоставляет точные ответы на запросы, экономя время специалистов.</li>
+                <li><b>Умная обработка запросов</b> - понимает технические термины и контекст, помогая находить нужные данные даже по сложным вопросам.</li>
+                <li><b>Автоматизация рутинных задач</b> - извлекает ключевую информацию, генерирует выжимки и подсказки для работы с СХД.</li>
+                <li><b>Интуитивное взаимодействие</b> - простой интерфейс, позволяющий быстро получать ответы без глубокого изучения системных требований.</li>
+            </ul>
+            <p><b>Vibecart</b> сочетает передовые технологии <b>искусственного интеллекта</b> и глубокое понимание <b>инфраструктуры хранения данных</b>, делая работу с компонентами компьютера максимально удобной и быстрой.</p>
+            <p><i>Используйте силу VibeCart — работайте с компонентами умнее!</i></p>
+        </section>
+
+        <!-- Технологии -->
+        <section id="technologies">
+            <h2>Используемые технологии</h2>
+            <ul>
+                <li>LangFlow — создание LLM и AI агента.</li>
+                <li>HTML и CSS — для создания сайта.</li>
+                <li>GitHub — контроль версий и синхронизация данных.</li>
+            </ul>
+        </section>
+
+        <!-- Контакты -->
+        <section id="contact">
+            <h2>Контакты и команда разработчиков</h2>
+            <p>Если у вас есть вопросы или предложения, свяжитесь с нами:</p>
+            <p>Корпоративный Email: </p>
+            <p>Или в Telegram: </p>
+            <p><a href="https://t.me/K_I_K027" target="_blank" style="color: #000000">Кофанов Алексей</a> - Data Science/AI разработчик</p>
+            <p><a href="https://t.me/Dartatiane" target="_blank" style="color: #000000">Гордиенко Артем</a> - Дизайнер/devops</p>
+            <p><a href="https://t.me/Koopich" target="_blank" style="color: #000000">Новичков Владислав</a> - frontend/Teamleader/backend</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 VibeCart. Все права защищены.
+    </footer>
+    
+<script>
+// Получаем элемент навигации
+const navigation = document.getElementById('navigation');
+
+// Запоминаем исходную позицию элемента
+const stickyOffset = navigation.offsetTop;
+
+// Обработчик события прокрутки
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset >= stickyOffset) {
+        // Добавляем класс для закрепления
+        if (!navigation.classList.contains('fixed')) {
+            navigation.classList.add('fixed');
+            // добавляем отступ у контента чтобы не скрывать его под меню
+            document.body.style.paddingTop = navigation.offsetHeight + 'px';
+        }
+    } else {
+        // Удаляем класс при возврате вверх
+        if (navigation.classList.contains('fixed')) {
+            navigation.classList.remove('fixed');
+            document.body.style.paddingTop = '0';
+        }
+    }
+});
+</script>
+
+
+</body>
+</html>
