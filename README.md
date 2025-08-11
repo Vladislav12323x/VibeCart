@@ -9,3 +9,5 @@ Next we write: "uv- pip install UV", "pip install uv".
 After completing all the previous steps, write: "uv run langflow run", this command will create localhost langflow. 
 Then download .json and open the site at the address offered to you in the console. Create a Basic promting on the site. 
 Upload .json in your project than open it and click on the button "share" and "embed in a site" and copy text.
+
+Write in your command string: pip install -r requirements.txt
